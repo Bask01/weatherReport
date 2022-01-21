@@ -9,7 +9,7 @@ $(document).ready(function() {
   $.getJSON("dataFiles/cities.json", function(data) {
     //console.log(data);
 
-    $("#cittyList").html("");
+    $("#cityList").html("");
     for (let x=0; x < data.cities.length; x++) {
       cityArray[x] = data.cities[x].cityName;
       latArray[x] = data.cities[x].cityLat;
@@ -29,13 +29,9 @@ $(document).ready(function() {
 
     }//end of for loop
 
-
-
-
- /* console.log(cityArray);
+    /* console.log(cityArray);
     console.log(latArray);
     console.log(lngArray); */
-
 
     localStorage.setItem("cityArray", JSON.stringify(cityArray));
     localStorage.setItem("cityLat", JSON.stringify(latArray));
@@ -49,7 +45,6 @@ $(document).ready(function() {
 $(document).on("click", "#cityList > li", function() {
   localStorage.setItem(
     "rowID",
-    $(this).closest("li").attr("id")
-  
+    $(this).closest("li").attr("id") 
   );
 })
